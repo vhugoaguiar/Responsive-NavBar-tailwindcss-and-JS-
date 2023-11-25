@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeSync Pro. (Responsive NavBar with tailwindcss)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body class="bg-zinc-900 text-white font-mono">
+    <nav class="md:p-4 border-b z-50">
+      <div class="container flex justify-between items-center relative">
+        <a href="#" class="text-xl pl-2 md:text-2xl">CodeSync Pro.</a>
+        <button
+          class="md:hidden px-2 py-1 cursor-pointer rounded"
+          id="hamburger"
+        >
+          <span
+            id="menu-icon"
+            class="material-symbols-outlined text-3xl"
+            onclick="toggleMenu()"
+          >
+            menu
+          </span>
+        </button>
+        <ul
+          class="menu-items p-2 bg-zinc-800 md:bg-zinc-900 -z-10 md:z-auto flex flex-col space-y-2 md:space-y-0 md:flex-row md:space-x-6 md:items-center absolute md:static w-full md:w-auto left-0 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-300"
+          id="dropdownMenu"
+        >
+          <li>
+            <a href="#" class="text-lg transition-all hover:border-b ease-in"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-lg transition-all hover:border-b ease-in"
+              >Docs</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-lg transition-all hover:border-b ease-in"
+              >Pricing</a
+            >
+          </li>
+          <li>
+            <a href="#" class="text-lg transition-all hover:border-b ease-in"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="md:ml-4 px-4 py-1 text-lg border border-white hover:bg-white hover:text-black rounded-full transition-all duration-200 ease-in"
+            >
+              Get Started
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="hero-container">
+      <div
+        class="container mx-auto text-center px-6 py-20 mt-4 md:mt-8 flex flex-col space-y-6 justify-center items-center"
+      >
+        <div class="hero-text">
+          <p class="text-3xl md:text-5xl font-bold text-zinc-300">
+            Welcome to
+            <span class="font-semibold text-white">CodeSync Pro.</span>
+          </p>
+          <p class="text-xl max-w-lg md:text-2xl text-zinc-300 mt-4 mx-auto">
+            Effortless code synchronization for developers and teams.
+          </p>
+          <p
+            class="text-xl py-2 text-zinc-300 mt-6 border border-zinc-300 max-w-md mx-auto"
+          >
+            > npm install -D codesyncpro
+          </p>
+        </div>
+        <a
+          href="#"
+          class="btn mt-12 px-8 py-3 text-xl border border-white hover:bg-white hover:text-black rounded-full transition-all duration-200 ease-in"
+        >
+          Get Started
+        </a>
+      </div>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        // Get references to the menu icon and dropdown menu elements
+        const menuIcon = document.querySelector("#menu-icon");
+        const dropdownMenu = document.querySelector("#dropdownMenu");
+
+        // Check if the menu is currently open based on the text content of the menu icon
+        const isOpen = menuIcon.textContent.trim() === "menu";
+
+        // Toggle the text content of the menu icon between "menu" and "close"
+        menuIcon.textContent = isOpen ? "close" : "menu";
+
+        // Toggle the classes on the dropdown menu based on whether the menu is open or closed
+        if (isOpen) {
+          // If the menu is open, add classes to show the dropdown menu
+          dropdownMenu.classList.add("top-[50px]", "opacity-100", "z-[20]");
+        } else {
+          // If the menu is closed, remove classes to hide the dropdown menu
+          dropdownMenu.classList.remove("top-[50px]", "opacity-100", "z-[20]");
+        }
+      }
+    </script>
+  </body>
+</html>

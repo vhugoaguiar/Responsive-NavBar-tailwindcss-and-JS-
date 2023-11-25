@@ -1,4 +1,6 @@
-# Responsive NavBar
+#Responsive NavBar
+
+## Overview
 
 This project is a responsive NavBar created by [Victor Hugo Santos Aguiar](https://github.com/vhugoaguiar) using Tailwind CSS and JavaScript.
 
